@@ -27,7 +27,7 @@ class Screen:
                  WIDTH: int = 400, 
                  HEIGHT: int = 500,
                  GRID_SIZE: int = 4,
-                 CELL_SIZE: int = 100,
+                 CELL_SIZE: int = 90,
                  GRID_PADDING: int = 10,
                  FPS: int = 60,
                  COLORS: dict = None):
@@ -59,7 +59,7 @@ class Screen:
             score_text = self.font.render(f"Score: {game.score}", True, (255, 255, 255))
         self.screen.blit(score_text, (20, 20))
         
-        grid_x = (self.WIDTH - (self.CELL_SIZE*self.GRID_PADDING*(self.GRID_SIZE - 1))) // 2
+        grid_x = (self.WIDTH - (self.CELL_SIZE*self.GRID_SIZE + self.GRID_PADDING*(self.GRID_SIZE - 1))) // 2
         grid_y = 100
         
         for i in range(self.GRID_SIZE):
